@@ -1,1 +1,85 @@
-しまだ
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
+export default function ProfilePage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-green-400 text-white p-6">
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-4xl font-bold text-center mb-8"
+      >
+        Shimada's Profile
+      </motion.h1>
+
+      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Card className="bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg">
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-4">🏃‍♂️ About Me</h2>
+              <p>
+                こんにちは！しまだです。スポーツが大好きで、体を動かすことが日常の一部です。
+                新しいことに挑戦するのが好きで、日々成長を目指しています！
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Card className="bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg">
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-4">💪 Hobbies</h2>
+              <ul className="list-disc list-inside">
+                <li>サッカー ⚽</li>
+                <li>ランニング 🏃‍♂️</li>
+                <li>筋トレ 🏋️‍♂️</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Card className="bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg">
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-semibold mb-4">🎯 Goals</h2>
+              <p>
+                スポーツを通して心身ともに成長し、挑戦し続ける人でありたいです。
+                何事にも全力で取り組むことを大切にしています。
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Card className="bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg">
+            <CardContent className="p-6 text-center">
+              <h2 className="text-2xl font-semibold mb-4">📩 Contact</h2>
+              <Button className="bg-white text-blue-600 font-bold">
+                メッセージを送る
+              </Button>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
